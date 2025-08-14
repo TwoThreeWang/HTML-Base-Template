@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式网站框架</title>
+	<meta name="description" content="响应式网站框架 - 现代化的企业级网站解决方案，支持移动端和桌面端完美适配">
+    <meta name="keywords" content="响应式网站,网站框架,移动端适配,企业官网">
+    <meta name="author" content="Your Website Name">
+    <meta name="robots" content="index, follow">
+	<link rel="icon" href='/static/img/icon.png'/>
+	<!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="响应式网站框架">
+    <meta property="og:description" content="现代化的企业级网站解决方案，支持移动端和桌面端完美适配">
+    <meta property="og:url" content="https://yourwebsite.com">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "响应式网站框架",
+        "url": "https://yourwebsite.com",
+        "description": "现代化的企业级网站解决方案"
+    }
+    </script>
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+	<link rel="canonical" href="https://网站地址/" />
+	<!-- RSS订阅地址，如果不需要rss可以删除 -->
+	<link href="https://wangtwothree.com/index.xml" rel="alternate" type="application/rss+xml" title="膨胀自留地" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header 样式 */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+        }
+
+		.header-row {
+			display: contents;
+		}
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .search-box {
+            max-width: 400px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+        }
+
+		.logo, .search-box {
+			margin: 0;
+		}
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .footer-menu a:hover {
+            color: #3498db;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Content 样式 */
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        /* 基础样式：作用于所有 SVG 图标 */
+        .icon {
+        width: 24px;
+        height: 24px;
+        fill: #333; /* 使用 fill 属性改变图标颜色 */
+        vertical-align: middle;
+        transition: fill 0.3s ease;
+        }
+
+		/* 弹窗样式 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .lightbox img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 95%;
+            max-height: 95%;
+			object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Footer 样式 */
+        footer {
+            background: #34495e;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-info {
+            flex: 1;
+        }
+
+        .footer-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .footer-menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-menu a:hover {
+            color: #3498db;
+        }
+
+        /* 移动端响应式 */
+        @media (max-width: 768px) {
+            .header-content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-row {
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+
+            .logo {
+                flex-shrink: 0;
+                margin-right: 1rem;
+            }
+
+            .search-box {
+                flex: 1;
+                max-width: none;
+                margin: 0 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+                flex-shrink: 0;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #34495e;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+			.footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-menu {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-row">
+                <div class="logo">
+					<a href="#home" aria-label="网站首页">LOGO</a>
+				</div>
+                <div class="search-box">
+                    <input type="text" id="search" name="search" placeholder="搜索..." aria-label="搜索网站内容">
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
+            <nav class="nav-menu" id="navMenu" role="navigation" aria-label="主导航">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#contact">联系</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <section class="content-section">
+            <h2>欢迎使用响应式网站框架</h2>
+            <p>这是一个使用最少代码实现的响应式网站框架，包含了完整的头部、内容和底部区域。</p>
+            <svg class="icon" title="首页"><use href="sprite.svg#cog"></use></svg>
+        </section>
+
+		<img src="https://cdn.c2v2.com/imgur/w3W9tfD.png" alt="示例图片1" onclick="openLightbox(this)">
+
+        <section class="content-section">
+            <h3>响应式特性</h3>
+            <p>在移动端设备上：</p>
+            <ul>
+                <li>Header具有吸顶效果，滚动时始终保持在页面顶部</li>
+                <li>Header第一行：Logo + 搜索框 + 折叠菜单按钮并排显示</li>
+                <li>点击菜单按钮展开导航菜单到第二行</li>
+                <li>Footer分为两行：底部菜单在上方，网站信息在下方</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3>技术特点</h3>
+            <p>使用现代CSS Grid和Flexbox布局，代码简洁高效，兼容性良好。</p>
+        </section>
+    </main>
+
+	<!-- 大图弹窗 -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightboxImg" alt="大图预览" aria-label="大图预览">
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 您的网站名称. 保留所有权利.</p>
+            </div>
+            <ul class="footer-menu" role="navigation" aria-label="底部导航">
+                <li><a href="#privacy">隐私政策</a></li>
+                <li><a href="#terms">使用条款</a></li>
+                <li><a href="#support">技术支持</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // 点击其他地方关闭菜单
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.menu-toggle');
+
+            if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+		function openLightbox(img) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightboxImg').src = img.src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG 精灵图示例</title>
+  <style>
+  /* 基础样式：作用于所有 SVG 图标 */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #333; /* 使用 fill 属性改变图标颜色 */
+  vertical-align: middle;
+  transition: fill 0.3s ease;
+}
+</style>
+</head>
+<body>
+
+  <h1>网站图标1</h1>
+
+  <div class="icon-group">
+    <svg class="icon" title="首页"><use href="sprite.svg#cog"></use></svg>123
+
+    <svg class="icon"><use href="sprite.svg#circle-user"></use></svg>
+
+    <svg class="icon"><use href="sprite.svg#bell"></use></svg>
+	
+	<svg class="icon"><use href="sprite.svg#clock"></use></svg>
+  </div>
+  
+</body>
+</html>
