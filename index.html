@@ -49,7 +49,7 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5em;
         }
 
 		.header-row {
@@ -86,7 +86,7 @@
         }
         .search-button {
             position: absolute;
-            right: 5px;
+            right: 3px;
             top: 50%;
             transform: translateY(-50%);
             background: var(--primary-color);
@@ -106,7 +106,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.5em;
         }
 
         .menu-toggle {
@@ -122,7 +122,7 @@
         footer {
             background-color: var(--bg-secondary);
             color: var(--bg-secondary-text);
-            padding: 1rem;
+            font-size: 0.9rem;
         }
 
         .footer-content {
@@ -159,7 +159,7 @@
 
             .logo {
                 flex-shrink: 0;
-                margin-right: 1rem;
+                font-size: 1.2rem;
             }
 
             .nav-search {
@@ -193,6 +193,7 @@
 
             .footer-menu {
                 order: -1;
+                margin-top: 1rem;
             }
         }
     </style>
@@ -210,7 +211,7 @@
                 <div class="nav-search">
                     <input type="search" class="search-input" placeholder="快速搜索..." aria-label="导航栏搜索框">
                     <button class="search-button" aria-label="导航栏搜索按钮">
-                        <svg class="icon"><use href="sprite.svg#search"></use></svg>
+                        <svg class="icon"><use href="sprite.svg?v=1#search"></use></svg>
                     </button>
                 </div>
                 <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
@@ -383,13 +384,13 @@
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-info">
-                <p>&copy; 2024 您的网站名称. 保留所有权利.</p>
+                <p>&copy; 2024 网站名称.</p>
             </div>
-            <ul class="footer-menu" role="navigation" aria-label="底部导航">
-                <li><a href="#privacy">隐私政策</a></li>
-                <li><a href="#terms">使用条款</a></li>
-                <li><a href="#support">技术支持</a></li>
-            </ul>
+            <div class="footer-menu" role="navigation" aria-label="底部导航">
+                <a href="#privacy">隐私政策</a>
+                <a href="#terms">使用条款</a>
+                <a href="#support">技术支持</a>
+            </div>
         </div>
     </footer>
 
