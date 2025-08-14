@@ -132,6 +132,16 @@
             margin-bottom: 2rem;
         }
 
+        figcaption {
+            font-size: 0.9rem;          /* 字体略小，与正文区分 */
+            font-weight: 300;
+            color: #666;                /* 颜色稍浅，突出描述性 */
+            line-height: 1.5;           /* 保持良好的行高 */
+            text-align: center;         /* 文字居中对齐 */
+            margin-top: 0.5rem;         /* 与图片顶部保持间距 */
+            margin-bottom: 1rem;
+        }
+
         /* 基础样式：作用于所有 SVG 图标 */
         .icon {
         width: 24px;
@@ -292,7 +302,12 @@
             <svg class="icon" title="首页"><use href="sprite.svg#cog"></use></svg>
         </section>
 
-		<img src="https://cdn.c2v2.com/imgur/w3W9tfD.png" alt="示例图片1" onclick="openLightbox(this)">
+        <figure>
+            <img src="https://cdn.c2v2.com/imgur/w3W9tfD.png" alt="示例图片1" onclick="openLightbox(this)">
+            <figcaption>
+                这是图片的详细描述
+            </figcaption>
+        </figure>
 
         <section class="content-section">
             <h3>响应式特性</h3>
