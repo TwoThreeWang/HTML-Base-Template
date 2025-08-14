@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>响应式网站框架</title>
+    <title>人工智能时代的技术变革 | 技术Blog</title>
 	<meta name="description" content="响应式网站框架 - 现代化的企业级网站解决方案，支持移动端和桌面端完美适配">
     <meta name="keywords" content="响应式网站,网站框架,移动端适配,企业官网">
     <meta name="author" content="Your Website Name">
@@ -29,30 +29,18 @@
 	<link rel="canonical" href="https://网站地址/" />
 	<!-- RSS订阅地址，如果不需要rss可以删除 -->
 	<link href="https://wangtwothree.com/index.xml" rel="alternate" type="application/rss+xml" title="膨胀自留地" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
         /* Header 样式 */
         header {
-            background: #2c3e50;
-            color: white;
+            background: var(--bg-primary);
+            color: var(--bg-primary-text);
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-content {
@@ -71,124 +59,70 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #3498db;
+            color: var(--primary-color);
         }
 
-        .search-box {
-            max-width: 400px;
+        .nav-search {
+            position: relative;
         }
 
-        .search-box input {
+        input {
             width: 100%;
-            padding: 0.5rem;
-            border: none;
+            padding: 8px 40px 8px 15px;
+            border: 1px solid var(--border-primary);
             border-radius: 20px;
-            outline: none;
+            font-size: 0.9rem;
+            background: var(--bg-primary);
+            color: var(--bg-primary-text);
         }
-
-		.logo, .search-box {
-			margin: 0;
-		}
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+        .nav-search .search-button {
+            width: 32px;
+            height: 32px;
+        }
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: var(--primary-text);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .search-button:hover {
+            background: var(--secondary-color);
+            color: var(--secondary-text);
+        }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover,
-        .footer-menu a:hover {
-            color: #3498db;
+            gap: 1.5rem;
         }
 
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--primary-color);
             font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Content 样式 */
-        main {
-            flex: 1;
-            padding: 2rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .content-section {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        figcaption {
-            font-size: 0.9rem;          /* 字体略小，与正文区分 */
-            font-weight: 300;
-            color: #666;                /* 颜色稍浅，突出描述性 */
-            line-height: 1.5;           /* 保持良好的行高 */
-            text-align: center;         /* 文字居中对齐 */
-            margin-top: 0.5rem;         /* 与图片顶部保持间距 */
-            margin-bottom: 1rem;
-        }
-
-        /* 基础样式：作用于所有 SVG 图标 */
-        .icon {
-        width: 24px;
-        height: 24px;
-        fill: #333; /* 使用 fill 属性改变图标颜色 */
-        vertical-align: middle;
-        transition: fill 0.3s ease;
-        }
-
-		/* 弹窗样式 */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            cursor: pointer;
-        }
-
-        .lightbox img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 95%;
-            max-height: 95%;
-			object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
             cursor: pointer;
         }
 
         /* Footer 样式 */
         footer {
-            background: #34495e;
-            color: white;
-            padding: 2rem 1rem;
+            background-color: var(--bg-secondary);
+            color: var(--bg-secondary-text);
+            padding: 1rem;
         }
 
         .footer-content {
@@ -206,16 +140,7 @@
         .footer-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
-        }
-
-        .footer-menu a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .footer-menu a:hover {
-            color: #3498db;
+            gap: 1.5rem;
         }
 
         /* 移动端响应式 */
@@ -237,7 +162,7 @@
                 margin-right: 1rem;
             }
 
-            .search-box {
+            .nav-search {
                 flex: 1;
                 max-width: none;
                 margin: 0 1rem;
@@ -253,7 +178,7 @@
                 flex-direction: column;
                 gap: 1rem;
                 padding-top: 1rem;
-                border-top: 1px solid #34495e;
+                border-top: 1px solid var(--border-primary);
                 width: 100%;
             }
 
@@ -273,6 +198,8 @@
     </style>
 </head>
 <body>
+    <!-- 设置默认主题 -->
+    <script>(()=>document.body.classList[localStorage.theme==='dark'||(localStorage.theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)?'add':'remove']('dark_mode'))();</script>
     <!-- Header -->
     <header role="banner">
         <div class="header-content">
@@ -280,8 +207,11 @@
                 <div class="logo">
 					<a href="#home" aria-label="网站首页">LOGO</a>
 				</div>
-                <div class="search-box">
-                    <input type="text" id="search" name="search" placeholder="搜索..." aria-label="搜索网站内容">
+                <div class="nav-search">
+                    <input type="search" class="search-input" placeholder="快速搜索..." aria-label="导航栏搜索框">
+                    <button class="search-button" aria-label="导航栏搜索按钮">
+                        <svg class="icon"><use href="sprite.svg#search"></use></svg>
+                    </button>
                 </div>
                 <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
             </div>
@@ -290,40 +220,156 @@
                 <li><a href="#about">关于</a></li>
                 <li><a href="#services">服务</a></li>
                 <li><a href="#contact">联系</a></li>
+                <li><a href="#" id="theme-toggle">Theme: auto</a></li>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main role="main">
-        <section class="content-section">
-            <h2>欢迎使用响应式网站框架</h2>
-            <p>这是一个使用最少代码实现的响应式网站框架，包含了完整的头部、内容和底部区域。</p>
-            <svg class="icon" title="首页"><use href="sprite.svg#cog"></use></svg>
-        </section>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">首页</a></li>
+                <li class="breadcrumb-item"><a href="#">分类</a></li>
+                <li class="breadcrumb-item active" aria-current="page">当前页面</li>
+            </ol>
+        </nav>
+        <!-- 文章主体 -->
+        <article class="content">
+            <hgroup>
+                <h1>人工智能如何重塑我们的数字生活</h1>
+                <p class="post-meta">发布于 2024年3月15日 · 阅读时间约8分钟</p>
+            </hgroup>
+            <p class="excerpt">人工智能不仅改变了我们的工作方式，更在根本上重塑了人类社会的运行逻辑。随着技术的不断突破，我们正在进入一个全新的智能时代。</p>
+            <button onclick="showMsg('这是一个简单的通知！', 'info')">消息通知</button>
+            <button onclick="showMsg('这是一个简单的通知！', 'success')">成功通知</button>
+            <button onclick="showMsg('这是一个简单的通知！', 'error')">错误通知</button>
+            <figure>
+                <img loading="lazy" src="https://cdn.c2v2.com/imgur/w3W9tfD.png#center" alt="示例图片1" onclick="openLightbox(this)">
+                <figcaption>
+                    这是图片的详细描述
+                </figcaption>
+            </figure>
+            <figure>
+                <img loading="lazy" src="https://cdn.c2v2.com/imgur/w3W9tfD.png" alt="示例图片1" onclick="openLightbox(this)">
+                <figcaption>
+                    这是图片的详细描述
+                </figcaption>
+            </figure>
 
-        <figure>
-            <img src="https://cdn.c2v2.com/imgur/w3W9tfD.png" alt="示例图片1" onclick="openLightbox(this)">
-            <figcaption>
-                这是图片的详细描述
-            </figcaption>
-        </figure>
+            <p><a href="https://www.baidu.com">人工智能</a>（AI）正在以前所未有的速度改变着我们的生活方式。从智能手机上的语音助手到复杂的机器学习算法驱动的大型系统，AI技术已经深入到我们日常生活的方方面面。</p>
+            <p>从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。</p>
+            <blockquote>
+                <strong>核心观点：</strong>AI的发展不是一个简单的线性过程，而是一场多维度交叉的技术革命，它将重新定义人类与技术的关系。
+            </blockquote>
 
-        <section class="content-section">
-            <h3>响应式特性</h3>
-            <p>在移动端设备上：</p>
+            <code>magnet:?xt=urn:btih:U3LGNT4KXWEZS6533XLPJLPMJGNUYVBM</code>
+
+            <h2>技术进步的时间轴</h2>
+            <p>让我们回顾一下AI发展的关键时刻：</p>
+
+            <ol>
+                <li><strong>1950年代</strong>：图灵测试的提出，奠定了人工智能概念的基础</li>
+                <li><strong>1980年代</strong>：专家系统的兴起，机器学习开始萌芽</li>
+                <li><strong>2010年代</strong>：深度学习的突破，神经网络实现质的飞跃</li>
+                <li><strong>2020年代</strong>：大规模语言模型如GPT系列，带来了生成式AI的新纪元</li>
+            </ol>
+
+            <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113411161657682&bvid=BV111DwYmEyy&cid=26574258398&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+            <h2>当前AI应用的主要领域</h2>
+
+            <h3>自然语言处理</h3>
+            <p>从简单的文本翻译到复杂的对话系统，AI在语言理解方面取得了巨大进步。GPT-4等大模型已经能够理解context并为人类提供自然流畅的对话体验。</p>
+
+            <p>
+                "研究表明，经过适当调优的语言模型在特定任务上的准确率可以达到95%以上"<code>hello</code>哈哈哈哈
+            </p>
+<pre><code>function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+</code></pre>
+            <h3>计算机视觉</h3>
             <ul>
-                <li>Header具有吸顶效果，滚动时始终保持在页面顶部</li>
-                <li>Header第一行：Logo + 搜索框 + 折叠菜单按钮并排显示</li>
-                <li>点击菜单按钮展开导航菜单到第二行</li>
-                <li>Footer分为两行：底部菜单在上方，网站信息在下方</li>
+                <li>医疗影像分析：AI辅助医生更快发现异常情况</li>
+                <li>自动驾驶：实时处理复杂路况信息</li>
+                <li>内容生成：从简单滤镜到深度换脸技术</li>
             </ul>
-        </section>
 
-        <section class="content-section">
-            <h3>技术特点</h3>
-            <p>使用现代CSS Grid和Flexbox布局，代码简洁高效，兼容性良好。</p>
-        </section>
+            <h2>现实案例分析</h2>
+            <p>以下表格展示了不同领域AI应用的成熟度：</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>应用领域</th>
+                        <th>技术成熟度</th>
+                        <th>市场采用率</th>
+                        <th>预期影响</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>智能客服</td>
+                        <td>高</td>
+                        <td>85%</td>
+                        <td>降本增效</td>
+                    </tr>
+                    <tr>
+                        <td>内容创作</td>
+                        <td>中</td>
+                        <td>45%</td>
+                        <td>创意辅助</td>
+                    </tr>
+                    <tr>
+                        <td>自动驾驶</td>
+                        <td>中</td>
+                        <td>25%</td>
+                        <td>出行变革</td>
+                    </tr>
+                    <tr>
+                        <td>医疗诊断</td>
+                        <td>高</td>
+                        <td>60%</td>
+                        <td>精准医疗</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>未来展望与思考</h2>
+
+            <blockquote>
+                "未来十年，我们可能会看到AI不再仅仅是工具，而是成为人类认知能力的延伸，这种协同关系将催生出全新的社会形态和经济模式。"
+                <br><em>— 《人工智能发展报告2024》</em>
+            </blockquote>
+
+            <h2>技术人的自我提升路径</h2>
+            <p>对于技术人员来说，如何在AI时代保持竞争力？以下建议供参考：</p>
+
+            <ul>
+                <li><code>基础理论</code> <small>深入学习机器学习和深度学习基础</small></li>
+                <li><code>实践项目</code> <small>参与开源项目，积累实战经验</small></li>
+                <li><code>跨领域知识</code> <small>培养行业理解的深度和广度</small></li>
+                <li><code>持续学习</code> <small>关注最新论文和技术动态</small></li>
+            </ul>
+
+            <div class="callout">
+                📧 <a href="mailto:tech@example.com">订阅技术周报</a> ·
+                <a href="https://github.com/example/ai-resources">GitHub资源库</a> ·
+                <a href="https://t.me/tech_discussion">加入讨论组</a>
+            </div>
+
+            <!-- 作者信息 -->
+            <section style="margin-top: 50px;">
+                <hr>
+                <div>
+                    <h3>关于作者</h3>
+                    <p>张三，高级AI工程师，专注于机器学习在产品化中的应用。拥有10年互联网和AI领域经验，曾参与多个千万级用户产品的架构设计。</p>
+                    <p><a href="https://blog.example.com">个人博客</a> ·
+                    <a href="https://twitter.com/tech_zhang">Twitter</a> ·
+                    <a href="https://linkedin.com/in/zhang-ai">LinkedIn</a></p>
+                </div>
+            </section>
+        </article>
     </main>
 
 	<!-- 大图弹窗 -->
@@ -331,6 +377,7 @@
         <span class="close">&times;</span>
         <img id="lightboxImg" alt="大图预览" aria-label="大图预览">
     </div>
+    <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
 
     <!-- Footer -->
     <footer role="contentinfo">
@@ -361,17 +408,6 @@
                 menu.classList.remove('active');
             }
         });
-
-		function openLightbox(img) {
-            document.getElementById('lightbox').style.display = 'block';
-            document.getElementById('lightboxImg').src = img.src;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
     </script>
 </body>
 </html>
