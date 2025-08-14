@@ -11,7 +11,10 @@ git add .
 git commit -m "Initial commit"
 
 # 关联远程仓库
-git remote add origin https://github.com/myusername/my-new-project.git
+git remote add origin git@github.com:username/my-new-project.git
+
+# 将当前所在的分支重命名为 main
+git branch -M main
 
 # 推送到远程仓库
 git push -u origin main
