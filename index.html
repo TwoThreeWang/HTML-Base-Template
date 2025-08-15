@@ -88,7 +88,7 @@
             position: absolute;
             right: 3px;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotate(320deg);
             background: var(--primary-color);
             color: var(--primary-text);
             border: none;
@@ -211,9 +211,8 @@
 				</div>
                 <div class="nav-search">
                     <input type="search" class="search-input" placeholder="快速搜索..." aria-label="导航栏搜索框">
-                    <button class="search-button" aria-label="导航栏搜索按钮">
-                        <svg class="icon"><use href="sprite.svg?v=1#search"></use></svg>
-                    </button>
+                    <button class="search-button" aria-label="导航栏搜索按钮"><span style="font-size:1.2rem">⚲</span></button>
+
                 </div>
                 <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
             </div>
@@ -222,7 +221,7 @@
                 <li><a href="#about">关于</a></li>
                 <li><a href="#services">服务</a></li>
                 <li><a href="#contact">联系</a></li>
-                <li><a href="#" id="theme-toggle">Theme: auto</a></li>
+                <li><a href="#" id="theme-toggle">☀︎ auto</a></li>
             </nav>
         </div>
     </header>
@@ -244,8 +243,9 @@
             </hgroup>
             <p class="excerpt">人工智能不仅改变了我们的工作方式，更在根本上重塑了人类社会的运行逻辑。随着技术的不断突破，我们正在进入一个全新的智能时代。</p>
             <button onclick="showMsg('这是一个简单的通知！', 'info')">消息通知</button>
-            <button onclick="showMsg('这是一个简单的通知！', 'success')">成功通知</button>
-            <button onclick="showMsg('这是一个简单的通知！', 'error')">错误通知</button>
+            <button onclick="showMsg('这是一个成功的通知！', 'success')">成功通知</button>
+            <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
+            <div class="loading">加载中...</div>
             <figure>
                 <img loading="lazy" src="https://cdn.c2v2.com/imgur/w3W9tfD.png#center" alt="示例图片1" onclick="openLightbox(this)">
                 <figcaption>

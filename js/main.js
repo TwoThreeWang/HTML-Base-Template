@@ -5,7 +5,7 @@ const {body} = document, themes = ['auto','light','dark'],
 const updateTheme = theme => {
   const isDark = theme === 'dark' || (theme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
   body.classList.toggle('dark_mode', isDark);
-  if(toggle('theme-toggle')) toggle('theme-toggle').textContent = `Theme: ${theme}`;
+  if(toggle('theme-toggle')) toggle('theme-toggle').textContent = `☀︎ ${theme}`;
 };
 
 updateTheme(currentTheme);
