@@ -75,7 +75,7 @@ table tr th :last-child,table tr td :last-child{margin:0}
 .msg.info{border-left:solid 10px var(--secondary-color)}
 .msg.success{border-left:solid 10px #7b9d75}
 .msg.error{border-left:solid 10px var(--primary-color)}
-#top{position:fixed;bottom:20px;right:20px;padding:8px 9px;background:var(--primary-color);color:var(--primary-text);border:none;border-radius:4px;cursor:pointer;display:none}
+#top{position:fixed;bottom:20px;right:20px;padding:0 9px;background:var(--primary-color);color:var(--primary-text);border:none;border-radius:4px;cursor:pointer;display:none}
 #top.show{display:block;opacity:1}
 @keyframes spin{from{transform:rotate(0deg)}
 to{transform:rotate(360deg)}

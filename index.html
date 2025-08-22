@@ -164,10 +164,6 @@
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px var(--secondary-color);
         }
-        .nav-search .search-button {
-            width: 32px;
-            height: 32px;
-        }
         .search-button {
             position: absolute;
             right: 3px;
@@ -176,11 +172,13 @@
             background: var(--primary-color);
             color: var(--primary-text);
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.5rem;
         }
         .search-button:hover {
             background: var(--secondary-color);
@@ -295,10 +293,10 @@
 				</div>
                 <div class="nav-search">
                     <input type="search" class="search-input" placeholder="快速搜索..." aria-label="导航栏搜索框">
-                    <button class="search-button" aria-label="导航栏搜索按钮"><span style="font-size:1.2rem">⚲</span></button>
+                    <div class="search-button" aria-label="导航栏搜索按钮">⚲</div>
 
                 </div>
-                <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
+                <div class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</div>
             </div>
             <nav class="nav-menu" id="navMenu" role="navigation" aria-label="主导航">
                 <li><a href="#home">首页</a></li>
@@ -463,7 +461,7 @@
         <span class="close">&times;</span>
         <img id="lightboxImg" alt="大图预览" aria-label="大图预览">
     </div>
-    <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+    <div id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</div>
 
     <!-- Footer -->
     <footer role="contentinfo">
