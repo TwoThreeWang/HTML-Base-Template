@@ -200,6 +200,45 @@
             cursor: pointer;
         }
 
+        /* 按钮样式 */
+        button{
+            background-color: var(--bg-primary);
+            color: var(--bg-primary-text);
+            border: 1px solid var(--border-primary);
+            border-radius: 5px;
+            padding: 0.6em 2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover{
+            box-shadow:  3px 3px 0px var(--border-primary),
+             -3px -3px 0px var(--bg-secondary);
+        }
+        button.primary{
+            background-color: var(--primary-color);
+            color: var(--primary-text);
+        }
+        button.light{
+            background-color: var(--bg-primary);
+            border: 1px solid var(--bg-primary);
+            color: var(--bg-primary-text);
+        }
+        button.light:hover{
+            border: 1px solid var(--border-primary);
+        }
+
+        /* 卡片样式 */
+        .card{
+            border: 1px solid var(--border-primary);
+            border-radius: 5px;
+            padding: 1em;
+            margin: 1em 0;
+            box-shadow:  3px 3px 0px var(--border-primary),
+             -3px -3px 0px var(--bg-secondary);
+        }
+
+
+
         /* Footer 样式 */
         footer {
             background-color: var(--bg-secondary);
@@ -324,10 +363,14 @@
                 <p class="post-meta">发布于 2024年3月15日 · 阅读时间约8分钟</p>
             </hgroup>
             <p class="excerpt">人工智能不仅改变了我们的工作方式，更在根本上重塑了人类社会的运行逻辑。随着技术的不断突破，我们正在进入一个全新的智能时代。</p>
-            <button onclick="showMsg('这是一个简单的通知！', 'info')">消息通知</button>
-            <button onclick="showMsg('这是一个成功的通知！', 'success')">成功通知</button>
+            <button onclick="showMsg('这是一个简单的通知！', 'info')" class="light">消息通知</button>
+            <button onclick="showMsg('这是一个成功的通知！', 'success')" class="primary">成功通知</button>
             <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
             <div class="loading">加载中...</div>
+            <div class="card">
+                <h4>卡片标题</h4>
+                <p>这是一个卡片的内容。</p>
+            </div>
             <figure>
                 <img loading="lazy" decoding="async" src="https://cdn.c2v2.com/imgur/w3W9tfD.png#center" alt="示例图片1" onclick="openLightbox(this)">
                 <figcaption>
