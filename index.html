@@ -162,7 +162,6 @@
         input:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--secondary-color);
         }
         .search-button {
             position: absolute;
@@ -205,14 +204,14 @@
             background-color: var(--bg-primary);
             color: var(--bg-primary-text);
             border: 1px solid var(--border-primary);
-            border-radius: 5px;
+            border-radius: 4px;
             padding: 0.6em 2em;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         button:hover{
             box-shadow:  3px 3px 0px var(--border-primary),
-             -3px -3px 0px var(--bg-secondary);
+             -0px -0px 0px var(--bg-primary);
         }
         button.primary{
             background-color: var(--primary-color);
@@ -226,19 +225,15 @@
         button.light:hover{
             border: 1px solid var(--border-primary);
         }
-
         /* 卡片样式 */
         .card{
-            border: 1px solid var(--border-primary);
-            border-radius: 5px;
+            border:1px solid var(--border-primary);
+            border-radius:3px;
             padding: 1em;
             margin: 1em 0;
-            box-shadow:  3px 3px 0px var(--border-primary),
-             -3px -3px 0px var(--bg-secondary);
+            box-shadow:  6px 6px 0px var(--border-primary),
+             -0px -0px 0px var(--bg-primary);
         }
-
-
-
         /* Footer 样式 */
         footer {
             background-color: var(--bg-secondary);
@@ -368,7 +363,7 @@
             <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
             <div class="loading">加载中...</div>
             <div class="card">
-                <h4>卡片标题</h4>
+                <strong>卡片标题</strong>
                 <p>这是一个卡片的内容。</p>
             </div>
             <figure>
