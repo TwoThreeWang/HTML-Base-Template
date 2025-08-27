@@ -227,6 +227,27 @@
         button.light:hover{
             border: 1px solid var(--border-primary);
         }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 999px;
+            padding: 3px 3px 3px 1.5em;
+        }
+        .cta-btn:hover{
+            border: 1px solid var(--primary-color);
+            box-shadow: none;
+        }
+        .cta-btn span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--primary-text);
+        }
         /* 卡片样式 */
         .card{
             border:1px solid var(--border-primary);
@@ -363,6 +384,7 @@
             <button onclick="showMsg('这是一个简单的通知！', 'info')" class="light">消息通知</button>
             <button onclick="showMsg('这是一个成功的通知！', 'success')" class="primary">成功通知</button>
             <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
+            <button class="cta-btn">一个特殊样式链接<span>↗</span></button>
             <div class="loading">加载中...</div>
             <div class="card">
                 <strong>卡片标题</strong>
