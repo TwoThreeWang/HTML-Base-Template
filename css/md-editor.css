@@ -1,0 +1,63 @@
+:root {
+    --border-primary: #dad9d4;
+    --bg-color: #fff7f7;
+}
+
+.md-editor-toolbar {
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.md-editor-toolbar button {
+    padding: 4px 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.md-editor-toolbar button:hover {
+    background-color: var(--border-primary);
+}
+
+.md-editor-textarea {
+    width: 100%;
+    height: 90dvh;
+    padding: 10px;
+    border: none;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.md-editor-textarea:focus { outline: none; }
+
+.md-editor-emoji-panel {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-color);
+    padding: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+    gap: 4px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.md-editor-emoji-panel.show { display: grid; }
+
+.md-editor-emoji-item {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1em;
+    user-select: none;
+}
+
+.md-editor-emoji-item:hover { background: var(--border-primary); }
