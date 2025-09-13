@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=7200" />
     <title>人工智能如何重塑数字生活：2024年AI技术深度解析 | 技术Blog</title>
 	<meta name="description" content="响应式网站框架 - 现代化的企业级网站解决方案，支持移动端和桌面端完美适配">
     <meta name="keywords" content="响应式网站,网站框架,移动端适配,企业官网">
@@ -24,16 +25,63 @@
         "@type": ["BlogPosting", "Article"],
         "headline": "人工智能如何重塑我们的数字生活",
         "description": "深入分析AI技术如何从根本上改变人类社会运行逻辑",
+		"inLanguage": "zh-CN",
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://example.com/category/current-page/",
+			"name": "人工智能如何重塑我们的数字生活",
+			"url": "https://example.com/category/current-page/"
+		},
         "author": {
             "@type": "Person",
-            "name": "技术博客作者"
+            "name": "技术博客作者",
+			"url": "https://example.com/user/1",
+			"sameAs": [
+				"https://twitter.com/author-profile",
+				"https://linkedin.com/in/author-profile"
+			]
         },
+		"publisher": {
+			"@type": "Organization",
+			"name": "网站名称",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://example.com/logo.png"
+			}
+		},
         "datePublished": "2024-03-15T08:00:00+08:00",
         "dateModified": "2024-03-15T08:00:00+08:00",
         "image": "https://cdn.c2v2.com/imgur/w3W9tfD.png",
+		"articleBody": "深入分析AI技术如何从根本上改变人类社会运行逻辑，讨论了其在多个领域的应用...",
         "wordCount": 1200,
         "articleSection": "人工智能",
-        "keywords": ["人工智能", "AI技术", "数字化转型", "机器学习"]
+        "keywords": ["人工智能", "AI技术", "数字化转型", "机器学习"],
+        "commentCount": 2,
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CommentAction",
+            "userInteractionCount": 2
+        },
+		"comment": [
+            {
+                "@type": "Comment",
+                "author": {
+                    "@type": "Person",
+                    "name": "评论者A"
+                },
+                "datePublished": "2023-10-27T15:10:00+08:00",
+                "text": "这篇文章总结得太好了，特别是关于状态管理的观点，深有同感！"
+            },
+            {
+                "@type": "Comment",
+                "author": {
+                    "@type": "Person",
+                    "name": "评论者B"
+                },
+                "datePublished": "2023-10-27T16:05:00+08:00",
+                "text": "关于熔断和重试的实践部分，我正在研究，给了我很大的启发，谢谢分享。"
+            }
+        ]
         },
         {
         "@type": "BreadcrumbList",
@@ -53,7 +101,7 @@
             {
             "@type": "ListItem",
             "position": 3,
-            "name": "当前页面",
+            "name": "人工智能如何重塑我们的数字生活",
             "item": "https://example.com/category/current-page/"
             }
         ]
@@ -65,8 +113,8 @@
 	<link rel="canonical" href="https://网站地址/" />
 	<!-- RSS订阅地址，如果不需要rss可以删除 -->
 	<link href="https://wangtwothree.com/index.xml" rel="alternate" type="application/rss+xml" title="膨胀自留地" />
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/base.js" defer></script>
     <style>
         /* Header 样式 */
         header {
@@ -114,11 +162,6 @@
         input:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--secondary-color);
-        }
-        .nav-search .search-button {
-            width: 32px;
-            height: 32px;
         }
         .search-button {
             position: absolute;
@@ -128,11 +171,13 @@
             background: var(--primary-color);
             color: var(--primary-text);
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.5rem;
         }
         .search-button:hover {
             background: var(--secondary-color);
@@ -154,6 +199,64 @@
             cursor: pointer;
         }
 
+        /* 按钮样式 */
+        button{
+            background-color: var(--bg-primary);
+            color: var(--bg-primary-text);
+            border: 1px solid var(--border-primary);
+            border-radius: 4px;
+            padding: 0.25em 1.5em;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        button:hover{
+            box-shadow:  3px 3px 0px var(--border-primary),
+             -0px -0px 0px var(--bg-primary);
+        }
+        button.primary{
+            background-color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-text);
+        }
+        button.light{
+            background-color: var(--bg-primary);
+            border: 1px solid var(--bg-primary);
+            color: var(--bg-primary-text);
+        }
+        button.light:hover{
+            border: 1px solid var(--border-primary);
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 999px;
+            padding: 3px 3px 3px 1.5em;
+        }
+        .cta-btn:hover{
+            border: 1px solid var(--primary-color);
+            box-shadow: none;
+        }
+        .cta-btn span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--primary-text);
+        }
+        /* 卡片样式 */
+        .card{
+            border:1px solid var(--border-primary);
+            border-radius:3px;
+            padding: 1em;
+            margin: 1em 0;
+            box-shadow:  6px 6px 0px var(--border-primary),
+             -0px -0px 0px var(--bg-primary);
+        }
         /* Footer 样式 */
         footer {
             background-color: var(--bg-secondary);
@@ -247,10 +350,10 @@
 				</div>
                 <div class="nav-search">
                     <input type="search" class="search-input" placeholder="快速搜索..." aria-label="导航栏搜索框">
-                    <button class="search-button" aria-label="导航栏搜索按钮"><span style="font-size:1.2rem">⚲</span></button>
+                    <div class="search-button" aria-label="导航栏搜索按钮">⚲</div>
 
                 </div>
-                <button class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</button>
+                <div class="menu-toggle" onclick="toggleMenu()"  aria-label="切换导航菜单" aria-expanded="false" aria-controls="navMenu">☰</div>
             </div>
             <nav class="nav-menu" id="navMenu" role="navigation" aria-label="主导航">
                 <li><a href="#home">首页</a></li>
@@ -278,10 +381,15 @@
                 <p class="post-meta">发布于 2024年3月15日 · 阅读时间约8分钟</p>
             </hgroup>
             <p class="excerpt">人工智能不仅改变了我们的工作方式，更在根本上重塑了人类社会的运行逻辑。随着技术的不断突破，我们正在进入一个全新的智能时代。</p>
-            <button onclick="showMsg('这是一个简单的通知！', 'info')">消息通知</button>
-            <button onclick="showMsg('这是一个成功的通知！', 'success')">成功通知</button>
+            <button onclick="showMsg('这是一个简单的通知！', 'info')" class="light">消息通知</button>
+            <button onclick="showMsg('这是一个成功的通知！', 'success')" class="primary">成功通知</button>
             <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
+            <button class="cta-btn">一个特殊样式链接<span>↗</span></button>
             <div class="loading">加载中...</div>
+            <div class="card">
+                <strong>卡片标题</strong>
+                <p>这是一个卡片的内容。</p>
+            </div>
             <figure>
                 <img loading="lazy" decoding="async" src="https://cdn.c2v2.com/imgur/w3W9tfD.png#center" alt="示例图片1" onclick="openLightbox(this)">
                 <figcaption>
@@ -295,7 +403,7 @@
                 </figcaption>
             </figure>
 
-            <p><a href="https://www.baidu.com">人工智能</a>（AI）正在以前所未有的速度改变着我们的生活方式。从智能手机上的语音助手到复杂的机器学习算法驱动的大型系统，AI技术已经深入到我们日常生活的方方面面。</p>
+            <p><a href="https://www.baidu.com">人工智能</a>（AI）正在以<strong>前所未有的速度</strong>改变着我们的生活方式。从智能手机上的语音助手到复杂的机器学习算法驱动的大型系统，AI技术已经深入到我们日常生活的方方面面。</p>
             <p>从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。从完整的main.css文件来看，主要的样式选择器都已提供，但是没有看到navbar或wrapper等元素的margin相关样式。body顶部空白很可能是由于缺少body的margin-top重置、h1等标题元素的默认margin，或navbar缺少相关样式。需要新建或补充样式来修复这个问题。</p>
             <blockquote>
                 <strong>核心观点：</strong>AI的发展不是一个简单的线性过程，而是一场多维度交叉的技术革命，它将重新定义人类与技术的关系。
@@ -415,7 +523,7 @@
         <span class="close">&times;</span>
         <img id="lightboxImg" alt="大图预览" aria-label="大图预览">
     </div>
-    <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+    <div id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</div>
 
     <!-- Footer -->
     <footer role="contentinfo">

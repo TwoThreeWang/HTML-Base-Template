@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown编辑器 - 独立文件版本</title>
+    <link rel="stylesheet" href="css/md-editor.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <h1>Markdown编辑器示例</h1>
+
+    <pre><code>
+// 基本用法
+const editor = createMarkdownEditor('#container');
+
+// 自定义配置
+const editor = createMarkdownEditor('#container', {
+    storageKey: 'my_content', // 存储内容的键名
+    placeholder: '请输入内容...',
+    minHeight: 300,
+    emojis: ['😀', '😂', '❤️']
+});
+    </code></pre>
+
+    <h2>基本用法</h2>
+    <div id="editor1"></div>
+
+    <script src="js/md-editor.js"></script>
+    <script>
+        // 基本用法
+        const editor1 = createMarkdownEditor('#editor1');
+    </script>
+</body>
+</html>
