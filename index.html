@@ -340,7 +340,7 @@
 </head>
 <body>
     <!-- 设置默认主题 -->
-    <script>(()=>document.body.classList[localStorage.theme==='dark'||(localStorage.theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)?'add':'remove']('dark_mode'))();</script>
+    <script>(()=>document.body.classList[localStorage.theme==='dark'?'add':'remove']('dark_mode'))();</script>
     <!-- Header -->
     <header role="banner">
         <div class="header-content">
@@ -383,6 +383,7 @@
             <p class="excerpt">人工智能不仅改变了我们的工作方式，更在根本上重塑了人类社会的运行逻辑。随着技术的不断突破，我们正在进入一个全新的智能时代。</p>
             <button onclick="showMsg('这是一个简单的通知！', 'info')" class="light">消息通知</button>
             <button onclick="showMsg('这是一个成功的通知！', 'success')" class="primary">成功通知</button>
+            <button onclick="showMsg('这是一个警告的通知！', 'warning')">警告通知</button>
             <button onclick="showMsg('这是一个错误的通知！', 'error')">错误通知</button>
             <button class="cta-btn">一个特殊样式链接<span>↗</span></button>
             <span class="loading"></span>加载中...
